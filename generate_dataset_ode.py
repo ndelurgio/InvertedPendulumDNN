@@ -8,7 +8,7 @@ m = 0.24
 g = 9.81
 l = 0.18
 
-num_samples = 200000 ## Number of samples
+num_samples = 50000 ## Number of samples
 
 xdata = np.array([np.zeros(4)]) #0:theta, 1:thetadot, 2:posdot, 3:u, 4:t
 ydata = np.array([dyn.propogate(np.array([0,0,0,0]),1,0.001,0,M,m,g,l)])
@@ -27,6 +27,6 @@ for i in range(0,num_samples):
         print(str(i) + "\n")
 
 xdata = torch.tensor(xdata)
-torch.save(xdata,'xdata_ode.pt')
+torch.save(xdata,'xdata_ode_test.pt')
 ydata = torch.tensor(ydata)
-torch.save(ydata,'ydata_ode.pt')
+torch.save(ydata,'ydata_ode_test.pt')

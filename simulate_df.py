@@ -39,19 +39,24 @@ for t in tarr[0:-1]:
 
 
 fig, axs = plt.subplots(4)
-fig.suptitle("True Dynamics")
+fig.suptitle("True Dynamics vs. DNN Output")
 axs[0].plot(tarr,x.T[0])
 axs[0].plot(tarr,xtorch.T[0])
 axs[0].set(ylabel="Theta")
+axs[0].legend(["True","DNN Output"])
 axs[1].plot(tarr,x.T[1])
 axs[1].plot(tarr,xtorch.T[1])
 axs[1].set(ylabel="Theta dot")
+# axs[1].legend(["True","DNN Output"])
 axs[2].plot(tarr,x.T[2])
 axs[2].plot(tarr,xtorch.T[2])
 axs[2].set(ylabel="Pos")
+# axs[2].legend(["True","DNN Output"])
 axs[3].plot(tarr,x.T[3])
 axs[3].plot(tarr,xtorch.T[3])
 axs[3].set(ylabel="Pos dot")
+# axs[3].legend(["True","DNN Output"])
+
 
 plt.show(block=False)
 plt.pause(0.1) # Pause for interval seconds.

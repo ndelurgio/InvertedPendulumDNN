@@ -8,7 +8,7 @@ m = 0.24
 g = 9.81
 l = 0.18
 
-num_samples = 200000 ## Number of samples
+num_samples = 50000 ## Number of samples
 
 xdata = np.array([np.zeros(5)]) #0:theta, 1:thetadot, 2:pos, 3:xdot, 4:u
 ydata = np.array([dyn.dynamics(xdata[-1][:4],xdata[-1][4],M,m,g,l)])
@@ -27,6 +27,6 @@ for i in range(0,num_samples):
         print(str(i) + "\n")
 
 xdata = torch.tensor(xdata)
-torch.save(xdata,'xdata.pt')
+torch.save(xdata,'xdata_test.pt')
 ydata = torch.tensor(ydata)
-torch.save(ydata,'ydata.pt')
+torch.save(ydata,'ydata_test.pt')
